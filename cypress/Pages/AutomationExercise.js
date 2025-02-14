@@ -1,5 +1,6 @@
 class AutomationExercise {
   Names = {
+    newProduct: "NewProduct",
     searchProduct: ["top", "tshirt", "jean"],
     response405: "This request method is not supported.",
     responseBadReq400:

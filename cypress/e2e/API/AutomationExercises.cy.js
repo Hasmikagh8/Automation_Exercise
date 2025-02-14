@@ -14,7 +14,7 @@ describe("Automation Exercise", () => {
   });
 
   it("Post to All Products List", () => {
-    cy.postToAllProductsList(3, "TestProduct").then((resp) => {
+    cy.postToAllProductsList(3, automationExercise.Names.newProduct).then((resp) => {
       cy.log(resp);
       expect(resp.status).to.eq(200);
       expect(resp.body.responseCode).to.eq(405);
