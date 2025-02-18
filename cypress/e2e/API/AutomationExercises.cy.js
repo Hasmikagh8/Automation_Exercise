@@ -14,12 +14,14 @@ describe("Automation Exercise", () => {
   });
 
   it("Post to All Products List", () => {
-    cy.postToAllProductsList(3, automationExercise.Names.newProduct).then((resp) => {
-      cy.log(resp);
-      expect(resp.status).to.eq(200);
-      expect(resp.body.responseCode).to.eq(405);
-      expect(resp.body.message).to.eq(automationExercise.Names.response405);
-    });
+    cy.postToAllProductsList(3, automationExercise.Names.newProduct).then(
+      (resp) => {
+        cy.log(resp);
+        expect(resp.status).to.eq(200);
+        expect(resp.body.responseCode).to.eq(405);
+        expect(resp.body.message).to.eq(automationExercise.Names.response405);
+      }
+    );
   });
 
   it("Get All Brands List", () => {
@@ -74,8 +76,8 @@ describe("Automation Exercise", () => {
     });
   });
 
-  it("POST To Verify Login with invalid details", () => {
-    cy.postToVerifyLogin(automationExercise.invalidLoginPass).then((resp) => {
+  it("POST To Verify Login without Emaail Parameter", () => {
+    cy.postToVerifyLogin({email: "", password: password}).then((resp) => {
       cy.log(resp);
       expect(resp.status).to.eq(200);
       expect(resp.body.responseCode).to.eq(400);
@@ -92,6 +94,17 @@ describe("Automation Exercise", () => {
       let response = JSON.parse(resp.body);
       expect(response.responseCode).to.eq(405);
       expect(response.message).to.eq(automationExercise.Names.response405);
+    });
+  });
+
+  it("POST To Verify Login with invalid details", () => {
+    cy.postToVerifyLogin(automationExercise.invalidLoginPass).then((resp) => {
+      cy.log(resp);
+      expect(resp.status).to.eq(200);
+      expect(resp.body.responseCode).to.eq(400);
+      expect(resp.body.message).to.eq(
+        automationExercise.Names.responseBadLP400
+      );
     });
   });
 });

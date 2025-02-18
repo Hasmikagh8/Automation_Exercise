@@ -1,7 +1,7 @@
 class AutomationExercise {
   Names = {
     newProduct: "NewProduct",
-    searchProduct: ["top", "tshirt", "jean"],
+    searchProduct: ["Tops", "tshirt", "jean"],
     response405: "This request method is not supported.",
     responseBadReq400:
       "Bad request, search_product parameter is missing in POST request.",

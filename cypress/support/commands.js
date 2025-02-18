@@ -5,7 +5,7 @@ import { automationExercise } from "../Pages/AutomationExercise.js";
 
 Cypress.Commands.add("getAllProductsList", () => {
   cy.request({
-    url: `${Cypress.config("baseUrl")}${"/productsList"}`,
+    url: `${Cypress.config("baseUrl")}${"/api/productsList"}`,
     followRedirect: false,
   }).then((resp) => {
     return resp;
@@ -17,7 +17,7 @@ Cypress.Commands.add("postToAllProductsList", (number, newName) => {
   newProduct.name = newName;
   cy.request({
     method: "POST",
-    url: `${Cypress.config("baseUrl")}${"/productsList"}`,
+    url: `${Cypress.config("baseUrl")}${"/api/productsList"}`,
     followRedirect: false,
     body: newProduct,
   }).then((resp) => {
@@ -27,7 +27,7 @@ Cypress.Commands.add("postToAllProductsList", (number, newName) => {
 
 Cypress.Commands.add("getAllBrandsList", () => {
   cy.request({
-    url: `${Cypress.config("baseUrl")}${"/brandsList"}`,
+    url: `${Cypress.config("baseUrl")}${"/api/brandsList"}`,
     followRedirect: false,
   }).then((resp) => {
     return resp;
@@ -43,7 +43,7 @@ Cypress.Commands.add("putToAllBrandList", (number, newName) => {
   });
   cy.request({
     method: "PUT",
-    url: `${Cypress.config("baseUrl")}${"/brandsList"}`,
+    url: `${Cypress.config("baseUrl")}${"/api/brandsList"}`,
     followRedirect: false,
     body: putChange,
   }).then((resp) => {
@@ -55,7 +55,7 @@ Cypress.Commands.add("postToSearchProduct", (numSP) => {
   searchProduct.search_product = automationExercise.Names.searchProduct[numSP];
   cy.request({
     method: "POST",
-    url: `${Cypress.config("baseUrl")}${"/searchProduct"}`,
+    url: `${Cypress.config("baseUrl")}${"/api/searchProduct"}`,
     followRedirect: false,
     body: searchProduct,
   }).then((resp) => {
@@ -66,18 +66,7 @@ Cypress.Commands.add("postToSearchProduct", (numSP) => {
 Cypress.Commands.add("postToSearchProductWithoutParam", (numSP) => {
   cy.request({
     method: "POST",
-    url: `${Cypress.config("baseUrl")}${"/searchProduct"}`,
-    followRedirect: false,
-    body: {},
-  }).then((resp) => {
-    return resp;
-  });
-});
-
-Cypress.Commands.add("postToSearchProductWithoutParam", (numSP) => {
-  cy.request({
-    method: "POST",
-    url: `${Cypress.config("baseUrl")}${"/searchProduct"}`,
+    url: `${Cypress.config("baseUrl")}${"/api/searchProduct"}`,
     followRedirect: false,
     body: {},
   }).then((resp) => {
@@ -88,7 +77,7 @@ Cypress.Commands.add("postToSearchProductWithoutParam", (numSP) => {
 Cypress.Commands.add("postToVerifyLogin", (userPass) => {
   cy.request({
     method: "POST",
-    url: `${Cypress.config("baseUrl")}${"/verifyLogin"}`,
+    url: `${Cypress.config("baseUrl")}${"/api/verifyLogin"}`,
     followRedirect: false,
     body: userPass,
   }).then((resp) => {
@@ -99,7 +88,7 @@ Cypress.Commands.add("postToVerifyLogin", (userPass) => {
 Cypress.Commands.add("deleteToVerifyLogin", () => {
   cy.request({
     method: "DELETE",
-    url: `${Cypress.config("baseUrl")}${"/verifyLogin"}`,
+    url: `${Cypress.config("baseUrl")}${"/api/verifyLogin"}`,
     followRedirect: false,
   }).then((resp) => {
     return resp;
