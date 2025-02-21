@@ -1,7 +1,7 @@
 import { basePage } from "../../Pages/BasePage";
 import { getRandomNumber } from "../../utils/functions";
 
-let productIdConst = 0;
+let productIdSelected = 0;
 
 describe("Automation Exercise carousel part", () => {
   beforeEach(() => {
@@ -89,8 +89,8 @@ describe("Automation Exercise carousel part", () => {
       .find("a")
       .invoke("attr", basePage.Locators.dataProductID)
       .then((productId) => {
-        productIdConst = productId;
-        cy.log(productIdConst);
+        productIdSelected = productId;
+        cy.log(productIdSelected);
       });
 
     cy.get(basePage.Locators.featuresItemsCl)
@@ -113,7 +113,7 @@ describe("Automation Exercise carousel part", () => {
     cy.then(() => {
       cy.url().should(
         "include",
-        `${basePage.Locators.selectedProductLink}/${productIdConst}`
+        `${basePage.Locators.selectedProductLink}/${productIdSelected}`
       );
     });
 
@@ -124,7 +124,7 @@ describe("Automation Exercise carousel part", () => {
         .should(
           "have.attr",
           "src",
-          `${basePage.Locators.getProductPicture}${productIdConst}`
+          `${basePage.Locators.getProductPicture}${productIdSelected}`
         );
     });
   });
