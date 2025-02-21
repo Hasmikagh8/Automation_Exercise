@@ -1,4 +1,5 @@
 import { basePage } from "../../Pages/BasePage";
+import { getRandomNumber } from "../../utils/functions";
 
 let productIdConst = 0;
 
@@ -75,9 +76,7 @@ describe("Automation Exercise carousel part", () => {
   });
 
   it("Verify any item selection", () => {
-    const itemSelection = Math.floor(
-      Math.random() * basePage.Names.featuresItemsCount
-    );
+    const itemSelection = getRandomNumber(basePage.Names.featuresItemsCount);
     cy.log(itemSelection);
 
     cy.get(basePage.Locators.featuresItemsCl)
@@ -122,7 +121,11 @@ describe("Automation Exercise carousel part", () => {
     cy.then(() => {
       cy.get(basePage.Locators.viewProduct)
         .find("img")
-        .should("have.attr", "src", `${basePage.Locators.getProductPicture}${productIdConst}`);
+        .should(
+          "have.attr",
+          "src",
+          `${basePage.Locators.getProductPicture}${productIdConst}`
+        );
     });
   });
 });
