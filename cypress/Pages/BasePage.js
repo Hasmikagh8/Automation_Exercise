@@ -6,8 +6,9 @@ class BasePage {
     btnTestCases: "Test Cases",
     btnAPIList: "APIs list for practice",
     featuresItems: "Features Items",
-    home: "Home",
+    home: "home",
     products: "Products",
+    cart: "Cart",
     featuresItemsCount: "34",
   };
 

@@ -1,18 +1,25 @@
-import { defineConfig } from "cypress";
-import dotenv from "dotenv";
+const { defineConfig } = require("cypress");
 
-dotenv.config();
-const config = defineConfig({
-  e2e: {
+require('dotenv').config();
+
+module.exports = defineConfig({
+  chromeWebSecurity: false,
+  
+  e2e: {    
     baseUrl: process.env.globalUrl,
     env: {
       globalEmail: process.env.globalEmail,
       globalPassword: process.env.globalPassword,
     },
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      on("task", {
+      })
+      
+      return require("./cypress/plugins/index.js")(on, config);
     },
+    specPattern: ["**/*.feature", "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}"],
+    },
+  env: {
   },
 });
 
-export default config;

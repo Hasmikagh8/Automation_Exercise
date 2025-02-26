@@ -1,17 +1,40 @@
 {
-  "name": "automationexercise",
+  "name": "bdd-cypress",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
-    "cypress": "^14.0.1"
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
+    "@playwright/test": "^1.50.1",
+    "@shelex/cypress-allure-plugin": "^2.40.2",
+    "@types/node": "^22.10.10",
+    "cy-verify-downloads": "^0.2.6",
+    "cypress": "^14.0.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-postgres": "^1.1.1",
+    "esbuild": "^0.24.2",
+    "multiple-cucumber-html-reporter": "^3.9.0",
+    "node-xlsx": "^0.24.0",
+    "pg": "^8.13.1"
   },
   "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.0",
+    "@cucumber/cucumber": "^11.2.0",
+    "cypress-real-events": "^1.14.0",
     "dotenv": "^16.4.7"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/e2e/UI/**/*.{js,ts}",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   }
 }
