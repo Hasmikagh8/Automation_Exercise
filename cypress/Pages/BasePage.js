@@ -6,7 +6,7 @@ class BasePage {
     btnTestCases: "Test Cases",
     btnAPIList: "APIs list for practice",
     featuresItems: "Features Items",
-    home: "home",
+    home: "Home",
     products: "Products",
     cart: "Cart",
     featuresItemsCount: "34",
@@ -25,6 +25,7 @@ class BasePage {
     carouselLeft: ".fa fa-angle-left",
     h1: "h1",
     h2: "h2",
+    img: "img",
     testCasesBtn: ".test_cases_list",
     testCasesLink: "/test_cases",
     APIsListBtn: ".apis_list",
@@ -37,6 +38,10 @@ class BasePage {
     aViewProduct: "View Product",
     viewProduct: ".view-product",
     getProductPicture: "/get_product_picture/",
+    linkHome: "a[href='/']" ,
+    linkProducts: "a[href='/products']",
+    linkViewCart: "a[href='/view_cart']",
+
   };
 
   images = [
