@@ -1,10 +1,12 @@
 class Products {
-    Names = {
-        addeed: "Added!"
+    
+  Names = {
+    added: "Added!",
+  };
 
-    }
+  Locators = {
+    product: "/product",
+  };
+}
 
-  }
-  
-  export const products = new Products();
-  
+export const products = new Products();

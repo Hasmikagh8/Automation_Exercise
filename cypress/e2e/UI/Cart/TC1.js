@@ -1,15 +1,18 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { basePage } from "../../../Pages/BasePage";
+import { carts } from "../../../Pages/Cart";
+import { products } from "../../../Pages/Products";
 
 Given("I am on the home page", () => {
   cy.visit("/");
 });
 
 When("I click on Cart link", () => {
-  cy.get("a[href='/view_cart']").first().click();
+  cy.get(basePage.Locators.linkViewCart).first().click();
 });
 
 Then("Cart page should be opened", () => {
-  cy.url().should("include", "/view_cart");
+  cy.url().should("include", carts.Locators.viewCart);
 });
 
 Then("{string} link exists", (linkText) => {
@@ -22,6 +25,6 @@ When("I click {string} link", (linkText) => {
 });
 
 Then("We should be moved to Products page", () => {
-  cy.url().should("include", "/products");
+  cy.url().should("include", products.Locators.product);
 });
 
