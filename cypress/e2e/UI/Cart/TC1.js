@@ -16,7 +16,6 @@ Then("Cart page should be opened", () => {
 });
 
 Then("{string} link exists", (linkText) => {
-  cy.log(linkText);
   cy.contains(linkText).should("exist");
 });
 
