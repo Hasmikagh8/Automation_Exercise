@@ -27,5 +27,6 @@ Then("Images are changed", () => {
     // cy.get(".carousel-inner").find("div").eq(i).should("have.class", "item active");
     cy.get(basePage.images[i]).should("be.visible");
     cy.wait(3500);
+    
   }
 });
