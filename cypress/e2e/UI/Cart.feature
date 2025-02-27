@@ -15,7 +15,7 @@ Feature: Cart
   Scenario: Add product to Cart
     Given I am opening the products page
     When I hover over the first product
-    When I click Add to cart
+    And I click Add to cart
     Then Confirmation modal appears
     When I click on View Cart
     Then I should be moved to Cart page
