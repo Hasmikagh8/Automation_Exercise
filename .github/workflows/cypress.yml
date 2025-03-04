@@ -1,12 +1,22 @@
 name: End-to-end tests
+
 on: [push]
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    env: 
+      globalUrl: "https://automationexercise.com"
+      globalEmail: "test654321@mailinator.com"
+      globalPassword: "654321"
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
+        env:
+          globalUrl: ${{ secrets.GLOBAL_URL }}   # Use secrets if you prefer to store sensitive values securely
+          globalEmail: ${{ secrets.GLOBAL_EMAIL }} # Use secrets for security reasons
+          globalPassword: ${{ secrets.GLOBAL_PASSWORD }} # Similarly for passwords
