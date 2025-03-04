@@ -26,6 +26,7 @@
     "@badeball/cypress-cucumber-preprocessor": "^22.0.0",
     "@cucumber/cucumber": "^11.2.0",
     "cypress-real-events": "^1.14.0",
+    "cypress-wait-until": "^3.0.2",
     "dotenv": "^16.4.7"
   },
   "cypress-cucumber-preprocessor": {

@@ -2,6 +2,7 @@ import { resultJson } from "../fixtures/resultExample.json";
 import { putChange } from "../fixtures/resultExample.json";
 import { searchProduct } from "../fixtures/resultExample.json";
 import { automationExercise } from "../Pages/AutomationExercise.js";
+import 'cypress-wait-until';
 
 Cypress.Commands.add("getAllProductsList", () => {
   cy.request({

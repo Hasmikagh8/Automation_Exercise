@@ -1,7 +1,8 @@
+import { basePage } from "./BasePage";
 class Carts {
-    Names = {
-        viewCart : "View Cart",
-    };
+  Names = {
+    viewCart: "View Cart",
+  };
 
   Locators = {
     viewCart: "/view_cart",
@@ -9,4 +10,3 @@ class Carts {
 }
 
 export const carts = new Carts();
-
